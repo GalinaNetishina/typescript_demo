@@ -1,12 +1,16 @@
 
 import './App.css'
-import Listing from "./components/Listing";
+import Stars from "./components/Stars";
 
 function App() {  
 
   return (
     <>   
-    <Listing/>
+    <Stars/>
+    <Stars count={1}/>
+    <Stars count={3}/>
+    <Stars count={5}/>
+    <Stars count={7}/>
     </>
   )
 }

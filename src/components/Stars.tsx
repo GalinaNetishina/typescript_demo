@@ -18,7 +18,7 @@ type TStarCountProps = {
 }
 
 export default function Stars({count=0}: TStarCountProps ) {
-    const stars: number[] = Array.from(Array(5).keys()).map(i => i + 1);
+    const stars: number[] = Array.from(Array(count).keys()).map(i => i + 1);
   if (count < 1 || count > 5) {
     return null;}
   return (
