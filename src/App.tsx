@@ -1,6 +1,5 @@
-
 import './App.css'
-import Listing from "./components/Stars";
+import Listing from "./components/Listing";
 
 function App() {  
 

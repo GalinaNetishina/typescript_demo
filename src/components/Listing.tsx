@@ -18,18 +18,16 @@ type TItemProps = {
 }
 
 
-function Item({item}: TItemProps) {
-    enum Currencies{
-        USD, "$",
-        EUR, "€"
-    }
-    
+function Item({item}: TItemProps) {        
     item.title = (item.title && item.title.length > 50) ?  item.title.slice(0, 50) + "..." : item.title
-    let price: string =''
-    if (item.currency_code && (Currencies as any)[item.currency_code]) {
-        price = (Currencies as any)[item.currency_code]
-    }else if (item.currency_code){
-        price = item.price + ' ' + item.currency_code
+
+    let formatPrice = ''
+    if (item.currency_code == 'USD') {
+      formatPrice = `$ ${item.price}`
+    } else if (item.currency_code == 'EUR') {
+      formatPrice = `€ ${item.price}`
+    } else {
+      formatPrice = `${item.price} ${item.currency_code}`
     }
     
     let level: string = 'medium'
@@ -48,7 +46,7 @@ function Item({item}: TItemProps) {
         </div>
         <div className="item-details">
           <p className="item-title">{item.title}</p>
-          <p className="item-price">{price}</p>
+          <p className="item-price">{formatPrice}</p>
           <p className={`item-quantity level-${level}`}>{item.quantity} left</p>
         </div>
       </div>
