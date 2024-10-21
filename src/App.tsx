@@ -1,8 +1,7 @@
-
 import './App.css'
-import MessageHistory, { TMessageHistoryProps } from "./components/MessageHistory";
+import MessageHistory, { TMessage } from "./components/MessageHistory";
 
-const messages: TMessageHistoryProps = [{
+const messages: TMessage[] = [{
   id: 'chat-5-1090',
   from: { name: 'Ольга' },
   type: 'response',
